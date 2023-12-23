@@ -1,0 +1,13 @@
+.sticky__wrapper {
+    position: relative;
+  }
+  
+.sticky .sticky--inner {
+    position: fixed;
+    z-index: 1;
+    /* background-color: darksalmon; */
+    width: 100%
+}
+.navBackColor {
+  background-color: #F4F4F4;
+}

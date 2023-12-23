@@ -1,0 +1,14 @@
+.navigationBar {
+    background-color: #F4F4F4;
+    width: 100%;
+}
+.menu_items {
+   padding: 0px 15px 0px 15px;
+}
+.menu_items a {
+    color: black;
+    text-decoration: none;
+}
+.pageName {
+    padding-left: 20px
+}

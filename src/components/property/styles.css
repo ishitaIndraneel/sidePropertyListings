@@ -1,0 +1,45 @@
+.property_pics {
+    height: 280px;
+    width:315px;
+    padding-bottom: 15px;
+    align-items: center;
+
+}
+.heart_icon {
+    display: block;
+    width: 47px;
+    height: 47px;
+    position: relative;
+    top: -280px;
+    left: 250px;
+}
+.date{
+    padding-top: 15px;
+    text-align: left;
+}
+.property_details_container {
+    width:315px;
+}
+.container {
+    padding: 100px 200px 50px 200px;
+}
+.alignImage {
+    text-align: center;
+}
+.home_price {
+    font-weight: 700;
+    font-size: 26px;
+    padding: 15px 0 15px 0;
+    text-align: left;
+}
+.address {
+    font-weight: 400;
+    font-size: 15px;
+    color: #2D2D2D;
+    text-align: left;
+
+}
+.bed_bath {
+    font-weight: 600;
+    text-align: left;
+}

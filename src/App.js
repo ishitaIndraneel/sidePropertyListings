@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { useContext, createContext, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './navigation/Nav';
+import PropertyListing from './components/property/propertyListing';
+
+const NavContext = createContext()
+  export const NavData = () => useContext(NavContext)
 function App() {
+  
+  const [pageName, setPageName] = useState("")
+  useEffect(()=>{
+    setPageName("Property Listings")
+  },[setPageName])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+   <NavContext.Provider value={{pageName, setPageName}}>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Nav/>}>
+          <Route path="properties" element={<PropertyListing/>}></Route>
+        </Route>
+      </Routes>
+    </Router>
+   </NavContext.Provider>
   );
 }
 
