@@ -17,7 +17,7 @@ const PropertyListing = () => {
         const res = await simplyRetsService("https://api.simplyrets.com/properties")
         localStorage.setItem("listings", JSON.stringify(res))
         setListings(res)
-        if(favListings.length === 0) {
+        if(!favListings) {
             let favArr = []
             res.forEach((r)=>{
                 favArr.push({
@@ -52,13 +52,24 @@ const PropertyListing = () => {
 
     const storeFav = (listingId) => {
         let favArr = [...isFavArr]
-        favArr.filter((element)=> element.id === listingId)[0].isFav = !favArr.filter((element)=> element.id === listingId)[0].isFav
+        if(favArr){
+            let item = favArr.filter((element)=> element.id === listingId)[0]
+            if(item) {
+                item.isFav = !item.isFav
+            }
+        }
         setIsFavArr(favArr)
         localStorage.setItem("favListing", JSON.stringify(favArr))
     }
 
     const isListingFav = (listingId) => {
-        return isFavArr.filter((element)=> element.id === listingId)[0].isFav
+        if(isFavArr){
+            let item = isFavArr.filter((element)=> element.id === listingId)[0]
+            if(item) {
+                return item.isFav = !item.isFav
+            }
+        }
+        return false
     }
     return (
         <>
@@ -67,9 +78,9 @@ const PropertyListing = () => {
             <Grid item xs={4} sm={4} lg={9} md={8}>
                 <Grid container>
                 {
-                        listings.map((listing)=>{
+                        listings.map((listing, index)=>{
                         return (
-                            <Grid  className="card" item key={listing.mlsId} xs={12} sm={12} xl={4} lg={5} md={8}>
+                            <Grid  data-testid={`listing_id_${index}`} className="card" item key={listing.mlsId} xs={12} sm={12} xl={4} lg={5} md={8}>
                                    <div className="property_details_container" >
                                         <div onClick={()=>storeFav(listing.mlsId)}className="heart_icon">
                                                     {
