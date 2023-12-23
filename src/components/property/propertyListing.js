@@ -74,7 +74,7 @@ const PropertyListing = () => {
     return (
         <>
         <Grid container  className="container" spacing={0} direction="row"  >
-            <Grid item xs={4} sm={4} lg={2} md={2}></Grid>
+            <Grid item xs={1} sm={1} lg={2} md={3}></Grid>
             <Grid item xs={4} sm={4} lg={9} md={8}>
                 <Grid container>
                 {
@@ -108,7 +108,7 @@ const PropertyListing = () => {
                     }
                 </Grid>
             </Grid>
-            <Grid item sm={4} xs={4} lg={1} md={2}></Grid>
+            <Grid item sm={1} xs={1} lg={1} md={1}></Grid>
         </Grid>
         </>
         
