@@ -1,7 +1,7 @@
 # Welcome to Side Product Listings Application
 
-In the project directory, you can run:
-
+In the project directory, please run:
+###`npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
