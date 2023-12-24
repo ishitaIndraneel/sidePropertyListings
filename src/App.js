@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './navigation/Nav';
 import PropertyListing from './components/property/propertyListing';
 
-const NavContext = createContext()
-  export const NavData = () => useContext(NavContext)
+export const NavContext = createContext()
+export const NavData = () => useContext(NavContext)
 function App() {
   
   const [pageName, setPageName] = useState("")
