@@ -17,6 +17,7 @@ const PropertyListing = () => {
         const res = await simplyRetsService("https://api.simplyrets.com/properties")
         localStorage.setItem("listings", JSON.stringify(res))
         setListings(res)
+        
         if(!favListings) {
             let favArr = []
             res.forEach((r)=>{
@@ -73,11 +74,11 @@ const PropertyListing = () => {
     }
     return (
         <>
-        <Grid container  className="container" spacing={0} direction="row"  >
+        <Grid data-testid="property_listings" container  className="container" spacing={0} direction="row"  >
             <Grid item xs={1} sm={1} lg={2} md={3}></Grid>
             <Grid item xs={4} sm={4} lg={9} md={8}>
                 <Grid container>
-                {
+                {       
                         listings.map((listing, index)=>{
                         return (
                             <Grid  data-testid={`listing_id_${index}`} className="card" item key={listing.mlsId} xs={12} sm={12} xl={4} lg={5} md={8}>
